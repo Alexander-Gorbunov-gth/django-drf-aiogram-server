@@ -1,0 +1,18 @@
+# пример конфига сервера до активации Certbot
+
+server{
+
+    server_name ; # past ip and domain 
+
+    location /pgadmin/ {
+        proxy_set_header X-Script-Name /pgadmin;
+        proxy_set_header Host $host;
+        proxy_pass http://localhost:5050/;
+        proxy_redirect off;
+    }       
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+    }
+
+}
