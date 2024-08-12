@@ -147,6 +147,8 @@ dmypy.json
 
 # папки со статикой и медиа
 static/
-yatube_api/posts/static/
 media/
 codes/
+
+# MAC's files
+.DS_Store
