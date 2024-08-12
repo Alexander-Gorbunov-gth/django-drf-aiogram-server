@@ -7,6 +7,7 @@ from app.config.web import STATIC_ROOT, STATIC_URL
 
 urlpatterns: list[URLResolver | URLPattern] = [
     path("api/v1/", include("app.apps.api.web.urls")),
+    path('auth/', include('django.contrib.auth.urls')),
     path("admin/", admin.site.urls),
 ]
 

@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap5 %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "static/bootstrap/css/bootstrap.min.css" %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- FAVICON
+    <link rel="icon" href="{% static 'img/fav/favicon.ico' %}" type="image">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/fav/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/fav/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png' %}">-->
+
+    <title>
+      {% block title %}{% endblock %}
+    </title>
+  </head>
+
+  <body>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <script src="{% static 'static/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

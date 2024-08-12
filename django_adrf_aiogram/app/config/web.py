@@ -12,6 +12,10 @@ INSTALLED_APPS.extend(
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
+        "rest_framework",
+        "rest_framework.authtoken",
+        "adrf",
+        'drf_spectacular',
     ]
 )
 
@@ -37,10 +41,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "app.delivery.web.urls"
 
+TEMPLATES_DIR = BASE_DIR / 'templates'
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATES_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -74,9 +80,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.0/howto/static-files/
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "static"
+
+DATE_FORMAT = "d.m.Y"
+
+
