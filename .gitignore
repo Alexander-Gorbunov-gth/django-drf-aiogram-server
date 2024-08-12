@@ -151,4 +151,4 @@ media/
 codes/
 
 # MAC's files
-*.DS_Store
+.DS_Store
