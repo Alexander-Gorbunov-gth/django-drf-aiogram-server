@@ -20,7 +20,6 @@ def main() -> None:
         ) from exc
 
     _modify_startapp_args()
-
     execute_from_command_line(sys.argv)
 
 

@@ -13,6 +13,7 @@ from app.config import env
 # Application definition
 INSTALLED_APPS: list[str] = [
     "app.apps.core",
+    "app.apps.api",
 ]
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
