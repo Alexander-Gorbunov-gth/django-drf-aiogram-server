@@ -13,7 +13,7 @@ run-prod-server:
 	@python -m gunicorn app.delivery.web.asgi:application \
 		--worker-class uvicorn.workers.UvicornWorker \
 		--bind ${HOST}:${PORT} \
-		# --workers ${WORKERS} \
+		--workers ${WORKERS} \
 		# --log-level ${LOG_LEVEL} \
 		# --access-logfile ${ACCESS_LOGFILE} \
 		# --error-logfile ${ERROR_LOGFILE} \
