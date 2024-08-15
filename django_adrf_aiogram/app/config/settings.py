@@ -4,4 +4,5 @@ include(
     "application.py",
     "database.py",
     "web.py",
+    "celery.py"
 )
