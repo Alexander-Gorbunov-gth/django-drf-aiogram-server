@@ -12,7 +12,6 @@ class CheckView(aView):
     async def retrieve(self, request, pk):
         debug_loger.info("Start Celery Check")
         check_task.apply_async(
-            kwargs={"name": "Чек функции"},
             kwargsrepr={"name": "Чек функции"}
         )
         return Response({"check": "Get request - True"})

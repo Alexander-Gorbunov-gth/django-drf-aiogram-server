@@ -10,6 +10,8 @@ tasks_columns = "name,uuid,state,received,started,runtime"
 state_save_interval = 120000
 
 def format_task(task):
+    # добавялем понятное имя для задачи 
+    # (передать в apply_async - kwargsrepr={"name": "Чек функции"})
     name = task.kwargs.get("name")
     if name:
         task.name = name
