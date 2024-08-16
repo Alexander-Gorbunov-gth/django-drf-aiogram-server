@@ -5,7 +5,7 @@ run-bot:
 
 .PHONY: run
 run:
-	@python -m uvicorn app.delivery.web.asgi:application
+	@python -m uvicorn app.delivery.web.asgi:application --reload
 
 
 .PHONY: run-prod-server
@@ -14,7 +14,7 @@ run-prod-server:
 		--worker-class uvicorn.workers.UvicornWorker \
 		--bind ${HOST}:${PORT} \
 		--workers ${WORKERS} \
-		# --log-level ${LOG_LEVEL} \
+		--log-level ${LOG_LEVEL} \
 		# --access-logfile ${ACCESS_LOGFILE} \
 		# --error-logfile ${ERROR_LOGFILE} \
 
