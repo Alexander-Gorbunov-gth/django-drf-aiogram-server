@@ -1,8 +1,4 @@
-.PHONY: run-bot
-run-bot:
-	@python -m app.delivery.bot
-
-
+# Запуск локального сервера - бот запускается в общем цикле событий ASGI
 .PHONY: run
 run:
 	@python -m uvicorn app.delivery.web.asgi:application --reload
